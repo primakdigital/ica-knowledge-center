@@ -1,0 +1,28 @@
+export const COMPONENT_VERSIONS = {
+  SearchHeader: "1.0.0",
+  SearchTabs: "1.0.0",
+  SynthesisBox: "1.0.0",
+  SourcesPanel: "1.0.0",
+  ResultsList: "1.0.0",
+  FollowUpQuestions: "1.0.0",
+  ContentHeader: "1.0.0",
+  ContentBody: "1.0.0",
+  TOC: "1.0.0",
+  EvidencePanel: "1.0.0",
+  KeyTerms: "1.0.0",
+  ToolHeader: "1.0.0",
+  ToolForm: "1.0.0",
+  ProgressTracker: "1.0.0",
+  TipsPanel: "1.0.0",
+  LobbyHero: "1.0.0",
+  QuickGuide: "1.0.0",
+  CoursesSection: "1.0.0",
+  LecturesSection: "1.0.0",
+  PodcastsSection: "1.0.0",
+  Header: "1.0.0",
+  Footer: "1.0.0",
+  Breadcrumb: "1.0.0",
+  ActionButtons: "1.0.0",
+} as const;
+export type ComponentName = keyof typeof COMPONENT_VERSIONS;
+export const getVersion = (name: ComponentName): string => COMPONENT_VERSIONS[name];
