@@ -1,26 +1,334 @@
 @import "tailwindcss";
 
+/* =============================================================================
+   ICA KNOWLEDGE CENTER - DESIGN TOKENS
+   Source: ICA Design System v2.0 PDF
+   ============================================================================= */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* ---------------------------------------------------------------------------
+     BRAND COLORS (from ICA Design System)
+     --------------------------------------------------------------------------- */
+
+  /* Primary Palette */
+  --ica-primary: #000F37;           /* Navy - Headers, main text, footer */
+  --ica-secondary: #70B2EB;         /* Blue - Links, icons, info */
+  --ica-accent: #FCC645;            /* Yellow - Badges, CTAs */
+  --ica-sos: #E67167;               /* Coral - SOS, alerts, errors */
+
+  /* Semantic Colors */
+  --ica-success: #10B981;
+  --ica-warning: #FCC645;
+  --ica-error: #E67167;
+  --ica-info: #70B2EB;
+
+  /* Navy Scale */
+  --ica-navy-900: #000F37;
+  --ica-navy-800: #0D1B3F;
+  --ica-navy-700: #1A2747;
+  --ica-navy-600: #27334F;
+  --ica-navy-500: #344057;
+  --ica-navy-400: #4D5A6F;
+  --ica-navy-300: #667387;
+  --ica-navy-200: #8090A7;
+  --ica-navy-100: #B3BFD1;
+  --ica-navy-50: #E6EBF2;
+
+  /* Blue Scale */
+  --ica-blue-900: #1E4A6E;
+  --ica-blue-800: #2A6491;
+  --ica-blue-700: #3A7EB4;
+  --ica-blue-600: #4E94CB;
+  --ica-blue-500: #70B2EB;
+  --ica-blue-400: #8DC3F0;
+  --ica-blue-300: #A9D3F5;
+  --ica-blue-200: #C6E3F9;
+  --ica-blue-100: #E3F1FC;
+  --ica-blue-50: #F1F8FE;
+
+  /* Yellow Scale */
+  --ica-yellow-900: #7A5A0A;
+  --ica-yellow-800: #9C7410;
+  --ica-yellow-700: #BE8E18;
+  --ica-yellow-600: #DDA822;
+  --ica-yellow-500: #FCC645;
+  --ica-yellow-400: #FDD26A;
+  --ica-yellow-300: #FDDE8F;
+  --ica-yellow-200: #FEEAB4;
+  --ica-yellow-100: #FEF5D9;
+  --ica-yellow-50: #FFFAEC;
+
+  /* Coral Scale */
+  --ica-coral-900: #7A2A24;
+  --ica-coral-800: #9C3832;
+  --ica-coral-700: #BE4840;
+  --ica-coral-600: #D65A52;
+  --ica-coral-500: #E67167;
+  --ica-coral-400: #EB8D85;
+  --ica-coral-300: #F0A9A3;
+  --ica-coral-200: #F5C5C1;
+  --ica-coral-100: #FAE2DF;
+  --ica-coral-50: #FDF0EF;
+
+  /* Gray Scale */
+  --ica-gray-900: #111827;
+  --ica-gray-800: #1F2937;
+  --ica-gray-700: #374151;
+  --ica-gray-600: #4B5563;
+  --ica-gray-500: #6B7280;
+  --ica-gray-400: #9CA3AF;
+  --ica-gray-300: #D1D5DB;
+  --ica-gray-200: #E5E7EB;
+  --ica-gray-100: #F3F4F6;
+  --ica-gray-50: #F9FAFB;
+
+  /* ---------------------------------------------------------------------------
+     TYPOGRAPHY (from ICA Design System)
+     Font: Almoni DL AAA (headings), Almoni Neue DL AAA (body)
+     Fallback: Arial, sans-serif
+     --------------------------------------------------------------------------- */
+
+  --ica-font-heading: "Almoni DL AAA", Arial, sans-serif;
+  --ica-font-body: "Almoni Neue DL AAA", Arial, sans-serif;
+  --ica-font-accent: "FB Natritsa", Arial, sans-serif;
+  --ica-font-fallback: Arial, Helvetica, sans-serif;
+
+  /* Font Sizes */
+  --ica-text-display: 48px;         /* Hero titles */
+  --ica-text-h1: 32px;              /* Page titles */
+  --ica-text-h2: 24px;              /* Section titles */
+  --ica-text-h3: 20px;              /* Card titles */
+  --ica-text-h4: 18px;              /* Subheadings */
+  --ica-text-body-lg: 16px;         /* Lead paragraphs */
+  --ica-text-body: 14px;            /* Main text */
+  --ica-text-small: 13px;           /* Secondary text */
+  --ica-text-caption: 12px;         /* Labels, captions */
+  --ica-text-tiny: 10px;            /* Badges, metadata */
+
+  /* Font Weights */
+  --ica-font-bold: 700;
+  --ica-font-semibold: 600;
+  --ica-font-normal: 400;
+
+  /* Line Heights */
+  --ica-leading-tight: 1.25;
+  --ica-leading-normal: 1.5;
+  --ica-leading-relaxed: 1.75;
+
+  /* ---------------------------------------------------------------------------
+     SPACING (4px base unit from ICA Design System)
+     --------------------------------------------------------------------------- */
+
+  --ica-space-1: 4px;
+  --ica-space-2: 8px;
+  --ica-space-3: 12px;
+  --ica-space-4: 16px;
+  --ica-space-6: 24px;
+  --ica-space-8: 32px;
+  --ica-space-12: 48px;
+  --ica-space-16: 64px;
+
+  /* ---------------------------------------------------------------------------
+     BORDER RADIUS (from ICA Design System)
+     --------------------------------------------------------------------------- */
+
+  --ica-radius-sm: 4px;
+  --ica-radius-md: 8px;
+  --ica-radius-lg: 12px;
+  --ica-radius-xl: 16px;
+  --ica-radius-2xl: 20px;
+  --ica-radius-full: 9999px;
+
+  /* ---------------------------------------------------------------------------
+     SHADOWS (from ICA Design System)
+     --------------------------------------------------------------------------- */
+
+  --ica-shadow-card: 0 4px 8px rgba(0, 15, 55, 0.08);
+  --ica-shadow-hero: 0 6px 12px rgba(0, 15, 55, 0.15);
+  --ica-shadow-button: 0 2px 4px rgba(0, 15, 55, 0.12);
+  --ica-shadow-sos: 0 4px 8px rgba(230, 113, 103, 0.25);
+
+  /* ---------------------------------------------------------------------------
+     LAYOUT (from ICA Design System - 12 column grid)
+     --------------------------------------------------------------------------- */
+
+  /* Desktop */
+  --ica-canvas-desktop: 1440px;
+  --ica-content-desktop: 1200px;
+  --ica-padding-desktop: 120px;
+  --ica-gutter-desktop: 24px;
+
+  /* Tablet */
+  --ica-canvas-tablet: 768px;
+  --ica-content-tablet: 704px;
+  --ica-padding-tablet: 32px;
+  --ica-gutter-tablet: 16px;
+
+  /* Mobile */
+  --ica-canvas-mobile: 375px;
+  --ica-content-mobile: 327px;
+  --ica-padding-mobile: 24px;
+  --ica-gutter-mobile: 16px;
+
+  /* Header */
+  --ica-header-height: 72px;
+
+  /* Card dimensions */
+  --ica-card-width: 380px;
+  --ica-card-height: 200px;
+  --ica-card-radius: 16px;
+  --ica-card-padding: 32px;
+  --ica-card-top-bar: 6px;
+
+  /* ---------------------------------------------------------------------------
+     COMPONENT SIZES (Buttons from ICA Design System)
+     --------------------------------------------------------------------------- */
+
+  --ica-btn-xs: 28px;
+  --ica-btn-sm: 36px;
+  --ica-btn-md: 44px;
+  --ica-btn-lg: 52px;
 }
+
+/* =============================================================================
+   TAILWIND v4 THEME CONFIGURATION
+   Maps CSS variables to Tailwind utility classes
+   ============================================================================= */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Colors */
+  --color-ica-primary: var(--ica-primary);
+  --color-ica-secondary: var(--ica-secondary);
+  --color-ica-accent: var(--ica-accent);
+  --color-ica-sos: var(--ica-sos);
+  --color-ica-success: var(--ica-success);
+  --color-ica-warning: var(--ica-warning);
+  --color-ica-error: var(--ica-error);
+  --color-ica-info: var(--ica-info);
+
+  /* Navy Scale */
+  --color-ica-navy-50: var(--ica-navy-50);
+  --color-ica-navy-100: var(--ica-navy-100);
+  --color-ica-navy-200: var(--ica-navy-200);
+  --color-ica-navy-300: var(--ica-navy-300);
+  --color-ica-navy-400: var(--ica-navy-400);
+  --color-ica-navy-500: var(--ica-navy-500);
+  --color-ica-navy-600: var(--ica-navy-600);
+  --color-ica-navy-700: var(--ica-navy-700);
+  --color-ica-navy-800: var(--ica-navy-800);
+  --color-ica-navy-900: var(--ica-navy-900);
+
+  /* Blue Scale */
+  --color-ica-blue-50: var(--ica-blue-50);
+  --color-ica-blue-100: var(--ica-blue-100);
+  --color-ica-blue-200: var(--ica-blue-200);
+  --color-ica-blue-300: var(--ica-blue-300);
+  --color-ica-blue-400: var(--ica-blue-400);
+  --color-ica-blue-500: var(--ica-blue-500);
+  --color-ica-blue-600: var(--ica-blue-600);
+  --color-ica-blue-700: var(--ica-blue-700);
+  --color-ica-blue-800: var(--ica-blue-800);
+  --color-ica-blue-900: var(--ica-blue-900);
+
+  /* Yellow Scale */
+  --color-ica-yellow-50: var(--ica-yellow-50);
+  --color-ica-yellow-100: var(--ica-yellow-100);
+  --color-ica-yellow-200: var(--ica-yellow-200);
+  --color-ica-yellow-300: var(--ica-yellow-300);
+  --color-ica-yellow-400: var(--ica-yellow-400);
+  --color-ica-yellow-500: var(--ica-yellow-500);
+  --color-ica-yellow-600: var(--ica-yellow-600);
+  --color-ica-yellow-700: var(--ica-yellow-700);
+  --color-ica-yellow-800: var(--ica-yellow-800);
+  --color-ica-yellow-900: var(--ica-yellow-900);
+
+  /* Coral Scale */
+  --color-ica-coral-50: var(--ica-coral-50);
+  --color-ica-coral-100: var(--ica-coral-100);
+  --color-ica-coral-200: var(--ica-coral-200);
+  --color-ica-coral-300: var(--ica-coral-300);
+  --color-ica-coral-400: var(--ica-coral-400);
+  --color-ica-coral-500: var(--ica-coral-500);
+  --color-ica-coral-600: var(--ica-coral-600);
+  --color-ica-coral-700: var(--ica-coral-700);
+  --color-ica-coral-800: var(--ica-coral-800);
+  --color-ica-coral-900: var(--ica-coral-900);
+
+  /* Gray Scale */
+  --color-ica-gray-50: var(--ica-gray-50);
+  --color-ica-gray-100: var(--ica-gray-100);
+  --color-ica-gray-200: var(--ica-gray-200);
+  --color-ica-gray-300: var(--ica-gray-300);
+  --color-ica-gray-400: var(--ica-gray-400);
+  --color-ica-gray-500: var(--ica-gray-500);
+  --color-ica-gray-600: var(--ica-gray-600);
+  --color-ica-gray-700: var(--ica-gray-700);
+  --color-ica-gray-800: var(--ica-gray-800);
+  --color-ica-gray-900: var(--ica-gray-900);
+
+  /* Fonts */
+  --font-ica-heading: var(--ica-font-heading);
+  --font-ica-body: var(--ica-font-body);
+  --font-ica-accent: var(--ica-font-accent);
+
+  /* Border Radius */
+  --radius-ica-sm: var(--ica-radius-sm);
+  --radius-ica-md: var(--ica-radius-md);
+  --radius-ica-lg: var(--ica-radius-lg);
+  --radius-ica-xl: var(--ica-radius-xl);
+  --radius-ica-2xl: var(--ica-radius-2xl);
+
+  /* Shadows */
+  --shadow-ica-card: var(--ica-shadow-card);
+  --shadow-ica-hero: var(--ica-shadow-hero);
+  --shadow-ica-button: var(--ica-shadow-button);
+  --shadow-ica-sos: var(--ica-shadow-sos);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* =============================================================================
+   BASE STYLES
+   ============================================================================= */
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--ica-font-body);
+  font-size: var(--ica-text-body);
+  line-height: var(--ica-leading-normal);
+  color: var(--ica-primary);
+  background-color: #ffffff;
+}
+
+/* RTL-specific adjustments */
+[dir="rtl"] {
+  text-align: right;
+}
+
+/* Headings use the heading font */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--ica-font-heading);
+  font-weight: var(--ica-font-bold);
+  line-height: var(--ica-leading-tight);
+  color: var(--ica-primary);
+}
+
+h1 { font-size: var(--ica-text-h1); }
+h2 { font-size: var(--ica-text-h2); }
+h3 { font-size: var(--ica-text-h3); }
+h4 { font-size: var(--ica-text-h4); }
+
+/* Focus styles for accessibility */
+:focus-visible {
+  outline: 2px solid var(--ica-secondary);
+  outline-offset: 2px;
+}
+
+/* Selection color */
+::selection {
+  background-color: var(--ica-blue-100);
+  color: var(--ica-primary);
 }

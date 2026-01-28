@@ -885,17 +885,5 @@ export default function MasterListing({
 }
 
 // =============================================================================
-// EXPORTS
+// EXPORTS - Types are already exported at their definitions above
 // =============================================================================
-
-export type {
-  BreadcrumbItem,
-  ListingHeroConfig,
-  ListingSearchConfig,
-  FilterOption,
-  FilterGroup,
-  CardBadge,
-  ListingCard,
-  PaginationConfig,
-  ListingCTAConfig,
-};

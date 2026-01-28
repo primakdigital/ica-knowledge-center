@@ -956,21 +956,5 @@ export default function MasterContent({
 }
 
 // =============================================================================
-// EXPORTS
+// EXPORTS - Types are already exported at their definitions above
 // =============================================================================
-
-export type {
-  BreadcrumbItem,
-  ContentBadge,
-  AuthorInfo,
-  MetaInfo,
-  TabConfig,
-  QuestionOption,
-  Question,
-  ScoringRange,
-  InteractiveConfig,
-  ContentSection,
-  RelatedItem,
-  SidebarBlock,
-  DownloadItem,
-};

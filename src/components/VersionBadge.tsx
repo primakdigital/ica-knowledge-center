@@ -1,4 +1,4 @@
-import COMPONENT_VERSIONS, ComponentName } from "@/config/componentVersions";
+import { COMPONENT_VERSIONS, ComponentName } from "@/config/componentVersions";
 interface VersionBadgeProps { component: ComponentName; show?: boolean; }
 export const VersionBadge = ({ component, show = process.env.NODE_ENV === "development" }: VersionBadgeProps) => {
   if (!show) return null;

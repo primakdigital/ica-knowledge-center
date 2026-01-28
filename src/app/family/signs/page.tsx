@@ -11,10 +11,6 @@ import MasterWizard, {
   type WizardConfig,
 } from "@/components/masters/Master_Wizard_v1.0";
 
-// =============================================================================
-// WIZARD CONFIGURATION
-// =============================================================================
-
 const SIGNS_CHECKLIST_CONFIG: WizardConfig = {
   title: "רשימת סימני אזהרה",
   subtitle: "סמנו את הסימנים שהבחנתם בהם — זה יעזור לכם להבין את המצב",
@@ -27,134 +23,117 @@ const SIGNS_CHECKLIST_CONFIG: WizardConfig = {
       id: "behavior",
       title: "שינויים בהתנהגות",
       question: "האם הבחנתם באחד או יותר מהשינויים הבאים בהתנהגות?",
-      type: "multi-select",
       options: [
-        { value: 1, label: "הסתגרות והתרחקות מהמשפחה", icon: "🚪" },
-        { value: 1, label: "שינויים פתאומיים במצב הרוח", icon: "😔" },
-        { value: 1, label: "התפרצויות זעם או עצבנות יתר", icon: "😤" },
-        { value: 1, label: "שקרים או העלמת מידע", icon: "🤥" },
-        { value: 1, label: "התנהגות סודית או חשדנית", icon: "🔒" },
+        { id: "isolation", value: 1, label: "הסתגרות והתרחקות מהמשפחה", icon: "🚪" },
+        { id: "mood", value: 1, label: "שינויים פתאומיים במצב הרוח", icon: "😔" },
+        { id: "anger", value: 1, label: "התפרצויות זעם או עצבנות יתר", icon: "😤" },
+        { id: "lies", value: 1, label: "שקרים או העלמת מידע", icon: "🤥" },
+        { id: "secretive", value: 1, label: "התנהגות סודית או חשדנית", icon: "🔒" },
       ],
     },
     {
       id: "social",
       title: "שינויים חברתיים",
       question: "האם הבחנתם בשינויים בחיים החברתיים?",
-      type: "multi-select",
       options: [
-        { value: 1, label: "החלפת חברים פתאומית", icon: "👥" },
-        { value: 1, label: "הימנעות מלהציג חברים חדשים", icon: "❓" },
-        { value: 1, label: "ירידה בפעילויות שאהב/ה", icon: "⚽" },
-        { value: 1, label: "בעיות עם חברים ותיקים", icon: "💔" },
+        { id: "new_friends", value: 1, label: "החלפת חברים פתאומית", icon: "👥" },
+        { id: "hide_friends", value: 1, label: "הימנעות מלהציג חברים חדשים", icon: "❓" },
+        { id: "activities", value: 1, label: "ירידה בפעילויות שאהב/ה", icon: "⚽" },
+        { id: "old_friends", value: 1, label: "בעיות עם חברים ותיקים", icon: "💔" },
       ],
     },
     {
       id: "school",
       title: "בית ספר ולימודים",
       question: "האם יש שינויים בתחום הלימודים?",
-      type: "multi-select",
       options: [
-        { value: 1, label: "ירידה בציונים", icon: "📉" },
-        { value: 1, label: "היעדרויות מבית הספר", icon: "🏫" },
-        { value: 1, label: "אובדן עניין בלימודים", icon: "📚" },
-        { value: 1, label: "בעיות משמעת", icon: "⚠️" },
-        { value: 1, label: "תלונות ממורים", icon: "📝" },
+        { id: "grades", value: 1, label: "ירידה בציונים", icon: "📉" },
+        { id: "absence", value: 1, label: "היעדרויות מבית הספר", icon: "🏫" },
+        { id: "interest", value: 1, label: "אובדן עניין בלימודים", icon: "📚" },
+        { id: "discipline", value: 1, label: "בעיות משמעת", icon: "⚠️" },
+        { id: "teachers", value: 1, label: "תלונות ממורים", icon: "📝" },
       ],
     },
     {
       id: "physical",
       title: "סימנים פיזיים",
       question: "האם הבחנתם בסימנים פיזיים?",
-      type: "multi-select",
       options: [
-        { value: 1, label: "עיניים אדומות או אישונים מורחבים/מצומצמים", icon: "👀" },
-        { value: 1, label: "שינויים בהרגלי שינה", icon: "😴" },
-        { value: 1, label: "שינויים בתיאבון או במשקל", icon: "🍽" },
-        { value: 1, label: "הזנחת היגיינה או הופעה", icon: "🚿" },
-        { value: 1, label: "ריחות חריגים", icon: "👃" },
+        { id: "eyes", value: 1, label: "עיניים אדומות או אישונים מורחבים/מצומצמים", icon: "👀" },
+        { id: "sleep", value: 1, label: "שינויים בהרגלי שינה", icon: "😴" },
+        { id: "appetite", value: 1, label: "שינויים בתיאבון או במשקל", icon: "🍽" },
+        { id: "hygiene", value: 1, label: "הזנחת היגיינה או הופעה", icon: "🚿" },
+        { id: "smell", value: 1, label: "ריחות חריגים", icon: "👃" },
       ],
     },
     {
       id: "money",
       title: "כסף וחפצים",
       question: "האם הבחנתם בשינויים הקשורים לכסף או חפצים?",
-      type: "multi-select",
       options: [
-        { value: 1, label: "בקשות תכופות לכסף", icon: "💰" },
-        { value: 1, label: "היעלמות של כסף או חפצים מהבית", icon: "❌" },
-        { value: 1, label: "חפצים חדשים ללא הסבר", icon: "🎁" },
-        { value: 1, label: "אביזרים חשודים בחדר/בתיק", icon: "🔍" },
+        { id: "requests", value: 1, label: "בקשות תכופות לכסף", icon: "💰" },
+        { id: "missing", value: 1, label: "היעלמות של כסף או חפצים מהבית", icon: "❌" },
+        { id: "new_items", value: 1, label: "חפצים חדשים ללא הסבר", icon: "🎁" },
+        { id: "suspicious", value: 1, label: "אביזרים חשודים בחדר/בתיק", icon: "🔍" },
       ],
     },
   ],
 
   resultThresholds: [
     {
-      minScore: 0,
-      maxScore: 3,
-      level: "green",
+      min: 0,
+      max: 3,
       title: "מעט סימנים",
-      message: "הסימנים שציינתם בודדים ואינם בהכרח מעידים על בעיה. יחד עם זאת, חשוב להמשיך לשים לב.",
-      recommendation: "המשיכו להיות קשובים ולשמור על תקשורת פתוחה.",
-      actions: [
-        { label: "חזרה לדף הבית", href: "/family" },
-        { label: "טיפים לתקשורת עם מתבגרים", href: "/family/guides" },
-      ],
+      description: "הסימנים שציינתם בודדים ואינם בהכרח מעידים על בעיה. יחד עם זאת, חשוב להמשיך לשים לב.",
+      color: "green",
+      recommendations: ["המשיכו להיות קשובים ולשמור על תקשורת פתוחה"],
+      ctaLabel: "חזרה לדף הבית",
+      ctaHref: "/family",
     },
     {
-      minScore: 4,
-      maxScore: 8,
-      level: "yellow",
+      min: 4,
+      max: 8,
       title: "כדאי לשים לב",
-      message: "יש מספר סימנים שכדאי לשים אליהם לב. זה לא בהכרח אומר שיש התמכרות, אבל שווה לברר.",
-      recommendation: "שקלו לנהל שיחה פתוחה ולבדוק מה קורה. אל תחכו.",
-      actions: [
-        { label: "איך לדבר על זה?", href: "/family/guides" },
-        { label: "התייעצות טלפונית", href: "tel:*2631" },
-      ],
+      description: "יש מספר סימנים שכדאי לשים אליהם לב. זה לא בהכרח אומר שיש התמכרות, אבל שווה לברר.",
+      color: "yellow",
+      recommendations: ["שקלו לנהל שיחה פתוחה ולבדוק מה קורה"],
+      ctaLabel: "איך לדבר על זה?",
+      ctaHref: "/family/guides",
     },
     {
-      minScore: 9,
-      maxScore: 14,
-      level: "orange",
+      min: 9,
+      max: 14,
       title: "מומלץ לפנות להתייעצות",
-      message: "ריבוי הסימנים מצביע על כך שכדאי לפנות להתייעצות מקצועית.",
-      recommendation: "פנייה למומחה תעזור לכם להבין מה קורה ומה הצעדים הבאים.",
-      actions: [
-        { label: "התקשרו עכשיו: *2631", href: "tel:*2631" },
-        { label: "מצאו מטפל/ת", href: "/family/guides#find-help" },
-      ],
+      description: "ריבוי הסימנים מצביע על כך שכדאי לפנות להתייעצות מקצועית.",
+      color: "orange",
+      recommendations: ["פנייה למומחה תעזור לכם להבין מה קורה"],
+      ctaLabel: "התקשרו עכשיו: *2631",
+      ctaHref: "tel:*2631",
     },
     {
-      minScore: 15,
-      maxScore: 25,
-      level: "red",
+      min: 15,
+      max: 25,
       title: "חשוב לפנות לעזרה",
-      message: "הסימנים שציינתם מצביעים על כך שכדאי מאוד לפנות לעזרה מקצועית בהקדם.",
-      recommendation: "אל תחכו. פנייה מוקדמת יכולה לעשות הבדל גדול.",
-      actions: [
-        { label: "התקשרו עכשיו: *2631", href: "tel:*2631", primary: true },
-        { label: "מרפאות ICA", href: "https://ica.org.il/clinics" },
-      ],
+      description: "הסימנים שציינתם מצביעים על כך שכדאי מאוד לפנות לעזרה מקצועית בהקדם.",
+      color: "red",
+      recommendations: ["אל תחכו. פנייה מוקדמת יכולה לעשות הבדל גדול."],
+      ctaLabel: "התקשרו עכשיו: *2631",
+      ctaHref: "tel:*2631",
     },
   ],
 
-  disclaimer: "רשימה זו נועדה להעלאת מודעות ואינה מהווה אבחון. סימנים אלו יכולים להיות קשורים גם למצבים אחרים. לאבחון מדויק יש לפנות לאיש מקצוע.",
+  completionMessage: "תודה על מילוי השאלון. זכרו - סימנים אלו יכולים להיות קשורים גם למצבים אחרים.",
+  backLabel: "הקודם",
+  nextLabel: "הבא",
+  submitLabel: "סיום",
+  restartLabel: "התחל מחדש",
 };
-
-// =============================================================================
-// COMPONENT
-// =============================================================================
 
 export default function FamilySignsPage() {
   const router = useRouter();
 
-  const handleComplete = (answers: Record<string, number>, totalScore: number) => {
-    console.log("Signs checklist completed:", { answers, totalScore });
-  };
-
-  const handleStepChange = (stepIndex: number) => {
-    console.log("Step changed to:", stepIndex);
+  const handleComplete = (answers: Record<string, string | string[]>, score?: number) => {
+    console.log("Signs checklist completed:", { answers, score });
   };
 
   return (
@@ -162,7 +141,6 @@ export default function FamilySignsPage() {
       config={SIGNS_CHECKLIST_CONFIG}
       persona="family"
       onComplete={handleComplete}
-      onStepChange={handleStepChange}
     />
   );
 }

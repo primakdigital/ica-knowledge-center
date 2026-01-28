@@ -3,7 +3,7 @@
 
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, Suspense } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 
@@ -186,6 +186,14 @@ const typeColors: Record<ContentType, string> = {
 };
 
 export default function SearchResultsPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">טוען...</div>}>
+      <SearchResultsContent />
+    </Suspense>
+  );
+}
+
+function SearchResultsContent() {
   const searchParams = useSearchParams();
   const initialQuery = searchParams.get("q") || "";
 

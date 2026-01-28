@@ -585,14 +585,5 @@ export default function MasterLanding({
 }
 
 // =============================================================================
-// EXPORTS
+// EXPORTS - Types are already exported at their definitions above
 // =============================================================================
-
-export type {
-  HeroConfig,
-  SearchConfig,
-  ContentZone,
-  ZoneCard,
-  CTAConfig,
-  AudienceTab,
-};

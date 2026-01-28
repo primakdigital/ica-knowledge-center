@@ -18,11 +18,11 @@ import React, { useState } from 'react';
 // - חינוך: Early_Signs (checklist)
 // ============================================================================
 
-// Types
-type WizardMode = 'single-select' | 'checklist';
-type PersonaTheme = 'therapist' | 'user' | 'family' | 'education';
+// Types - Exported for use in page components
+export type WizardMode = 'single-select' | 'checklist';
+export type PersonaTheme = 'therapist' | 'user' | 'family' | 'education';
 
-interface AnswerOption {
+export interface AnswerOption {
   id: string;
   label: string;
   description?: string;
@@ -30,7 +30,7 @@ interface AnswerOption {
   icon?: string;
 }
 
-interface WizardStep {
+export interface WizardStep {
   id: string;
   title: string;
   subtitle?: string;
@@ -40,7 +40,7 @@ interface WizardStep {
   required?: boolean;
 }
 
-interface ResultThreshold {
+export interface ResultThreshold {
   min: number;
   max: number;
   title: string;
@@ -51,7 +51,7 @@ interface ResultThreshold {
   ctaHref?: string;
 }
 
-interface WizardConfig {
+export interface WizardConfig {
   title: string;
   subtitle?: string;
   description?: string;
